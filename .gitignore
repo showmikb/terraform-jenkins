@@ -1,0 +1,6 @@
+venv/*
+.terraform/*
+.terraform.*
+jenkinskp.pem
+terraform.tf*
+.idea/*
