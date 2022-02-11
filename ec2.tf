@@ -32,10 +32,10 @@ resource "tls_private_key" "tlskey" {
 }
 
 resource "aws_key_pair" "kp" {
-  key_name   = var.key_name       # Create "myKey" to AWS!!
+  key_name   = var.key_name      
   public_key = tls_private_key.tlskey.public_key_openssh
 
-  provisioner "local-exec" { # Create "myKey.pem" to your computer!!
+  provisioner "local-exec" { 
     command = "echo '${tls_private_key.tlskey.private_key_pem}' > ./jenkinskp.pem"
   }
 }
